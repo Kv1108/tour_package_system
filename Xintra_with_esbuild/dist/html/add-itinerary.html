@@ -2081,139 +2081,91 @@
                 <!-- Page Header Close -->
 
                 <!-- Start::row-1 -->
-                <div class="row">
+                <div class="row mt-4">
     <div class="col-xl-12">
         <div class="card custom-card">
-            <div class="card-body add-products">
-                <div class="row gx-4">
-                    <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
-                        <div class="card custom-card shadow-none mb-0 border-0">
-                            <div class="card-body p-0">
-                                <div class="row gy-3">
-                                    <div class="col-xl-12">
-                                        <label for="tour-name" class="form-label">Tour Package Name</label>
-                                        <input type="text" class="form-control" id="tour-name" placeholder="Package Name">
-                                        <label for="tour-name" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Tour name should not exceed 30 characters</label>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="duration" class="form-label">Duration</label>
-                                        <select class="form-control" name="duration" id="duration">
-                                            <option value="">Select</option>
-                                            <option value="1 Day">1 Day</option>
-                                            <option value="2 Days">2 Days</option>
-                                            <option value="1 Week">1 Week</option>
-                                            <option value="Custom">Custom</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="agency-name" class="form-label">Travel Agency Name</label>
-                                        <input type="text" class="form-control" id="agency-name" placeholder="Agency Name">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="category" class="form-label">Tour Category</label>
-                                        <select class="form-control" name="category" id="category">
-                                            <option value="">Select</option>
-                                            <option value="Adventure">Adventure</option>
-                                            <option value="Leisure">Leisure</option>
-                                            <option value="Cultural">Cultural</option>
-                                            <option value="Religious">Religious</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="audience" class="form-label">Target Audience</label>
-                                        <select class="form-control" name="audience" id="audience">
-                                            <option value="">Select</option>
-                                            <option value="Family">Family</option>
-                                            <option value="Couples">Couples</option>
-                                            <option value="Solo Travelers">Solo Travelers</option>
-                                            <option value="Corporate">Corporate</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="locations" class="form-label">Locations Covered</label>
-                                        <textarea class="form-control" id="locations" placeholder="e.g., Goa, Manali, Kerala, Leh"></textarea>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="base-cost" class="form-label">Base Cost Per Person</label>
-                                        <input type="text" class="form-control" id="base-cost" placeholder="Cost">
-                                        <label for="base-cost" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Mention final price per person</label>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="overview" class="form-label">Tour Overview</label>
-                                        <textarea class="form-control" id="overview" rows="2"></textarea>
-                                        <label for="overview" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Description should not exceed 500 letters</label>
-                                    </div>
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
+            <div class="card-body">
+                <h5 class="fw-bold">Add Batches & Itinerary</h5>
+
+                <!-- Batch Selection -->
+                <div class="row gy-3">
+                    <div class="col-xl-6">
+                        <label for="batch-month" class="form-label">Month</label>
+                        <select class="form-control" id="batch-month">
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                        </select>
                     </div>
-                    <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
-                        <div class="card custom-card shadow-none mb-0 border-0">
-                            <div class="card-body p-0">
-                                <div class="row gy-3">
-                                    <div class="col-xl-6">
-                                        <label for="type" class="form-label">Package Type</label>
-                                        <input type="text" class="form-control" id="type" placeholder="Standard / Premium">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="group-size" class="form-label">Max Group Size</label>
-                                        <input type="text" class="form-control" id="group-size" placeholder="e.g., 20 people">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <p class="fw-medium mb-2 fs-14">Tour Package Images :</p>
-                                        <input type="file" class="form-control" name="tour-images" multiple>
-                                        <label class="form-label text-muted mt-2 fw-normal fs-12">* Minimum 6 images. Maintain uniform size.</label>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label class="form-label">Key Attractions / Highlights</label>
-                                        <textarea class="form-control" id="highlights" rows="2"></textarea>
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="actual-price" class="form-label">Actual Price</label>
-                                        <input type="text" class="form-control" id="actual-price" placeholder="Actual Price">
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="vendor-price" class="form-label">Vendor Price</label>
-                                        <input type="text" class="form-control" id="vendor-price" placeholder="Vendor Price">
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="discount" class="form-label">Discount</label>
-                                        <input type="text" class="form-control" id="discount" placeholder="Discount in %">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="status" class="form-label">Package Status</label>
-                                        <select class="form-control" name="status" id="status">
-                                            <option value="">Select</option>
-                                            <option value="Published">Published</option>
-                                            <option value="Draft">Draft</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="tags" class="form-label">Tags</label>
-                                        <select class="form-control" name="tags" id="product-tags" multiple>
-                                            <option value="Beach">Beach</option>
-                                            <option value="Nature">Nature</option>
-                                            <option value="Mountain">Mountain</option>
-                                            <option value="Trekking">Trekking</option>
-                                            <option value="Luxury">Luxury</option>
-                                            <option value="Budget">Budget</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-6">
+                        <label for="batch-dates" class="form-label">Batch Dates</label>
+                        <input type="text" class="form-control" id="batch-dates" placeholder="e.g., 18, 21, 25, 28">
+                        <small class="text-muted">*Enter dates separated by commas</small>
                     </div>
                 </div>
+
+                <!-- Itinerary Per Batch -->
+                <div class="mt-4">
+                    <label class="form-label">Day-wise Itinerary</label>
+                    <div id="itinerary-container">
+                        <!-- Example Itinerary Block -->
+                        <div class="border p-3 mb-3 rounded itinerary-day">
+                            <div class="row">
+                                <div class="col-xl-2">
+                                    <label class="form-label">Day</label>
+                                    <input type="number" class="form-control" name="day-number[]" placeholder="e.g., 1">
+                                </div>
+                                <div class="col-xl-10">
+                                    <label class="form-label">Title</label>
+                                    <input type="text" class="form-control" name="day-title[]" placeholder="e.g., Departure from Ahmedabad">
+                                </div>
+                                <div class="col-xl-12 mt-2">
+                                    <label class="form-label">Description</label>
+                                    <textarea class="form-control" name="day-description[]" rows="2" placeholder="e.g., Start your journey from Ahmedabad..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add More Days Button -->
+                    <button type="button" class="btn btn-outline-primary btn-sm mt-2" onclick="addItineraryDay()">Add Another Day +</button>
+                </div>
+                <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
+               <!-- <button class="btn btn-primary1 me-2 mb-2 mb-sm-0">Add Day Plan<i class="bi bi-plus-lg ms-2"></i></button>
+               --> 
+               <button class="btn btn-primary mb-2 mb-sm-0">Save Tour Package<i class="bi bi-download ms-2"></i></button>
             </div>
-            <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <button class="btn btn-primary1 me-2 mb-2 mb-sm-0">Add Itinerary<i class="bi bi-plus-lg ms-2"></i></button>
-                <button class="btn btn-primary mb-2 mb-sm-0">Save Tour Package<i class="bi bi-download ms-2"></i></button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- JS to add more itinerary blocks -->
+<script>
+    function addItineraryDay() {
+        const container = document.getElementById('itinerary-container');
+        const newBlock = document.createElement('div');
+        newBlock.className = 'border p-3 mb-3 rounded itinerary-day';
+        newBlock.innerHTML = `
+            <div class="row">
+                <div class="col-xl-2">
+                    <label class="form-label">Day</label>
+                    <input type="number" class="form-control" name="day-number[]" placeholder="e.g., 1">
+                </div>
+                <div class="col-xl-10">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" name="day-title[]" placeholder="e.g., Arrival at Chandigarh">
+                </div>
+                <div class="col-xl-12 mt-2">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="day-description[]" rows="2" placeholder="e.g., Night stay at Shimla..."></textarea>
+                </div>
+            </div>
+        `;
+        container.appendChild(newBlock);
+    }
+</script>
+
 
         <!-- End::app-content -->
 
