@@ -2054,170 +2054,214 @@
 <!-- End::app-sidebar -->
 
         <!-- Start::app-content -->
-        <div class="main-content app-content">
-            <div class="container-fluid">
+<!-- Add Tour Package Page -->
+<div class="main-content app-content">
+  <div class="container-fluid">
 
-                <!-- Page Header -->
-                <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
-                    <div>
-                        <nav>
-                            <ol class="breadcrumb mb-1">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Apps</a></li>
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Ecommerce</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Add Product</li>
-                            </ol>
-                        </nav>
-                        <h1 class="page-title fw-medium fs-18 mb-0">Add Product</h1>
-                    </div>
-                    <div class="btn-list">
-                        <button class="btn btn-white btn-wave">
-                            <i class="ri-filter-3-line align-middle me-1 lh-1"></i> Filter
-                        </button>
-                        <button class="btn btn-primary btn-wave me-0">
-                            <i class="ri-share-forward-line me-1"></i> Share
-                        </button>
-                    </div>
-                </div>
-                <!-- Page Header Close -->
-
-                <!-- Start::row-1 -->
-                <div class="row">
-    <div class="col-xl-12">
-        <div class="card custom-card">
-            <div class="card-body add-products">
-                <div class="row gx-4">
-                    <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
-                        <div class="card custom-card shadow-none mb-0 border-0">
-                            <div class="card-body p-0">
-                                <div class="row gy-3">
-                                    <div class="col-xl-12">
-                                        <label for="tour-name" class="form-label">Tour Package Name</label>
-                                        <input type="text" class="form-control" id="tour-name" placeholder="Package Name">
-                                        <label for="tour-name" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Tour name should not exceed 30 characters</label>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="duration" class="form-label">Duration</label>
-                                        <select class="form-control" name="duration" id="duration">
-                                            <option value="">Select</option>
-                                            <option value="1 Day">1 Day</option>
-                                            <option value="2 Days">2 Days</option>
-                                            <option value="1 Week">1 Week</option>
-                                            <option value="Custom">Custom</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="agency-name" class="form-label">Travel Agency Name</label>
-                                        <input type="text" class="form-control" id="agency-name" placeholder="Agency Name">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="category" class="form-label">Tour Category</label>
-                                        <select class="form-control" name="category" id="category">
-                                            <option value="">Select</option>
-                                            <option value="Adventure">Adventure</option>
-                                            <option value="Leisure">Leisure</option>
-                                            <option value="Cultural">Cultural</option>
-                                            <option value="Religious">Religious</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="audience" class="form-label">Target Audience</label>
-                                        <select class="form-control" name="audience" id="audience">
-                                            <option value="">Select</option>
-                                            <option value="Family">Family</option>
-                                            <option value="Couples">Couples</option>
-                                            <option value="Solo Travelers">Solo Travelers</option>
-                                            <option value="Corporate">Corporate</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="locations" class="form-label">Locations Covered</label>
-                                        <textarea class="form-control" id="locations" placeholder="e.g., Goa, Manali, Kerala, Leh"></textarea>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="base-cost" class="form-label">Base Cost Per Person</label>
-                                        <input type="text" class="form-control" id="base-cost" placeholder="Cost">
-                                        <label for="base-cost" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Mention final price per person</label>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="overview" class="form-label">Tour Overview</label>
-                                        <textarea class="form-control" id="overview" rows="2"></textarea>
-                                        <label for="overview" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Description should not exceed 500 letters</label>
-                                    </div>
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
-                        <div class="card custom-card shadow-none mb-0 border-0">
-                            <div class="card-body p-0">
-                                <div class="row gy-3">
-                                    <div class="col-xl-6">
-                                        <label for="type" class="form-label">Package Type</label>
-                                        <input type="text" class="form-control" id="type" placeholder="Standard / Premium">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <label for="group-size" class="form-label">Max Group Size</label>
-                                        <input type="text" class="form-control" id="group-size" placeholder="e.g., 20 people">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <p class="fw-medium mb-2 fs-14">Tour Package Images :</p>
-                                        <input type="file" class="form-control" name="tour-images" multiple>
-                                        <label class="form-label text-muted mt-2 fw-normal fs-12">* Minimum 6 images. Maintain uniform size.</label>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label class="form-label">Key Attractions / Highlights</label>
-                                        <textarea class="form-control" id="highlights" rows="2"></textarea>
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="actual-price" class="form-label">Actual Price</label>
-                                        <input type="text" class="form-control" id="actual-price" placeholder="Actual Price">
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="vendor-price" class="form-label">Vendor Price</label>
-                                        <input type="text" class="form-control" id="vendor-price" placeholder="Vendor Price">
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <label for="discount" class="form-label">Discount</label>
-                                        <input type="text" class="form-control" id="discount" placeholder="Discount in %">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="status" class="form-label">Package Status</label>
-                                        <select class="form-control" name="status" id="status">
-                                            <option value="">Select</option>
-                                            <option value="Published">Published</option>
-                                            <option value="Draft">Draft</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="tags" class="form-label">Tags</label>
-                                        <select class="form-control" name="tags" id="product-tags" multiple>
-                                            <option value="Beach">Beach</option>
-                                            <option value="Nature">Nature</option>
-                                            <option value="Mountain">Mountain</option>
-                                            <option value="Trekking">Trekking</option>
-                                            <option value="Luxury">Luxury</option>
-                                            <option value="Budget">Budget</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <button class="btn btn-primary1 me-2 mb-2 mb-sm-0">Add Itinerary<i class="bi bi-plus-lg ms-2"></i></button>
-                <button class="btn btn-primary mb-2 mb-sm-0">Save Tour Package<i class="bi bi-download ms-2"></i></button>
-            </div>
-        </div>
+    <!-- Page Header -->
+    <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
+      <div>
+        <nav>
+          <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a href="#">Apps</a></li>
+            <li class="breadcrumb-item"><a href="#">Ecommerce</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+          </ol>
+        </nav>
+        <h1 class="page-title fw-medium fs-18 mb-0">Add Tour Package</h1>
+      </div>
     </div>
+
+    <!-- Form Section -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="card custom-card">
+          <div class="card-body add-products">
+            <div class="row gx-4">
+
+              <!-- Left Section -->
+              <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
+                <div class="card-body p-0">
+                  <div class="row gy-3">
+                    <div class="col-xl-12">
+                      <label class="form-label">Tour Title</label>
+                      <input type="text" class="form-control" placeholder="Enter tour name" />
+                    </div>
+                    <div class="col-xl-12">
+                      <label class="form-label">Tour Description</label>
+                      <textarea class="form-control" rows="3" placeholder="Short description..."></textarea>
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Package Price (₹)</label>
+                      <input type="text" class="form-control" placeholder="e.g., 24999" />
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Discount (%)</label>
+                      <input type="text" class="form-control" placeholder="e.g., 10" />
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Main Departure Location</label>
+                      <select class="form-control">
+                        <option>Select Location</option>
+                        <option>Ahmedabad</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Destination Location</label>
+                      <select class="form-control">
+                        <option>Select Location</option>
+                        <option>Goa</option>
+                        <option>Leh Ladakh</option>
+                        <option>Kerala</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Tour Type</label>
+                      <select class="form-control">
+                        <option>Select Type</option>
+                        <option>Adventure</option>
+                        <option>Group Tour</option>
+                        <option>Family Tour</option>
+                        <option>Solo</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-6">
+                      <label class="form-label">Transportation Mode</label>
+                      <select class="form-control">
+                        <option>Select Mode</option>
+                        <option>Train</option>
+                        <option>Bus</option>
+                        <option>Flight</option>
+                        <option>Cab</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-6">
+                      <label for="start-date" class="form-label">Tour Start Date</label>
+  <input type="date" class="form-control" id="start-date" name="start_date" />
+                    </div>
+                    <div class="col-xl-6">
+  
+  <label for="end-date" class="form-label">Tour End Date</label>
+  <input type="date" class="form-control" id="end-date" name="end_date" />
 </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Section -->
+              <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
+                <div class="card-body p-0">
+                  <div class="row gy-3">
+                    <div class="col-xl-6">
+  <label class="form-label">Staying Options</label>
+                      <select class="form-control">
+                        <option>Select Stay</option>
+                        <option>Tent</option>
+                        <option>Luxury Tent</option>
+                        <option>Hotels</option>
+                      </select>
+</div>
+                    <div class="col-xl-12">
+                      <label class="form-label">Tour Package Images:</label>
+                      <input type="file" class="form-control" id="tour-images" accept="image/*" multiple />
+                      <label class="form-label text-muted mt-2 fw-normal fs-12">* Minimum 6 images. Maintain uniform size.</label>
+                      <div id="preview-images" class="mt-3 d-flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="col-xl-12">
+                      <label class="form-label">Tags</label>
+                      <select class="form-control" multiple>
+                        <option>Beach</option>
+                        <option>Mountain</option>
+                        <option>Luxury</option>
+                        <option>Budget</option>
+                      </select>
+                    </div>
+                    <div class="col-xl-12">
+                      <label class="form-label">Package Status</label>
+                      <select class="form-control">
+                        <option value="">Select</option>
+                        <option value="Published">Published</option>
+                        <option value="Draft">Draft</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Right Section -->
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer border-top d-sm-flex justify-content-end gap-2">
+            <button class="btn btn-primary1">
+              Add Itinerary <i class="bi bi-plus-lg ms-2"></i>
+            </button>
+            <a href="/add-batches" class="btn btn-primary">
+              Save and Continue <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Image Upload Preview Script -->
+<script>
+const input = document.getElementById('tour-images');
+const previewContainer = document.getElementById('preview-images');
+let selectedImages = [];
+
+input.addEventListener('change', function (event) {
+  const newFiles = Array.from(event.target.files);
+
+  newFiles.forEach(file => {
+    if (!selectedImages.some(f => f.name === file.name && f.size === file.size)) {
+      selectedImages.push(file);
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const previewBox = document.createElement('div');
+        previewBox.classList.add('position-relative');
+        previewBox.style.width = '100px';
+        previewBox.style.height = '100px';
+
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.className = 'rounded';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+
+        const removeBtn = document.createElement('button');
+        removeBtn.innerHTML = '&times;';
+        removeBtn.className = 'btn btn-sm btn-danger position-absolute top-0 end-0 p-0 px-1';
+        removeBtn.style.fontSize = '16px';
+
+        removeBtn.addEventListener('click', () => {
+          previewBox.remove();
+          selectedImages = selectedImages.filter(f => f !== file);
+        });
+
+        previewBox.appendChild(img);
+        previewBox.appendChild(removeBtn);
+        previewContainer.appendChild(previewBox);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  input.value = '';
+});
+</script>
 
         <!-- End::app-content -->
 
-        
+     
         <!-- Footer Start -->
 <footer class="footer mt-auto py-3 bg-white text-center">
     <div class="container">

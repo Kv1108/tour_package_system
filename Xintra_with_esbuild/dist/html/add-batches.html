@@ -2061,116 +2061,96 @@
       <div>
         <nav>
           <ol class="breadcrumb mb-1">
-            <li class="breadcrumb-item"><a href="#">Apps</a></li>
-            <li class="breadcrumb-item"><a href="#">Ecommerce</a></li>
-            <li class="breadcrumb-item active">Add Itinerary</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);">Packages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Batches</li>
           </ol>
         </nav>
-        <h1 class="page-title fw-medium fs-18 mb-0">Add Itinerary</h1>
+        <h1 class="page-title fw-medium fs-18 mb-0">Add Batches</h1>
       </div>
     </div>
 
-    <!-- Itinerary Section -->
+    <!-- Batch Form -->
     <div class="row mt-4">
       <div class="col-xl-12">
         <div class="card custom-card">
           <div class="card-body">
-            <h5 class="fw-bold">Day-wise Itinerary</h5>
-            <div id="itinerary-container">
-              <!-- One Day Block -->
-              <div class="border p-3 mb-3 rounded itinerary-day">
-                <div class="row gy-2">
-                  <div class="col-xl-2">
-                    <label class="form-label">Day</label>
-                    <input type="number" class="form-control" name="day-number[]" placeholder="1">
-                  </div>
-                  <div class="col-xl-10">
-                    <label class="form-label">Title</label>
-                    <input type="text" class="form-control" name="day-title[]" placeholder="Arrival at Shimla">
-                  </div>
-                  <div class="col-xl-12">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" name="day-description[]" rows="2"></textarea>
-                  </div>
-                  <div class="col-xl-12">
-                    <label class="form-label">Images for this day</label>
-                    <input type="file" class="form-control day-image-input" multiple accept="image/*">
-                    <div class="image-preview mt-2 d-flex flex-wrap gap-2"></div>
-                  </div>
-                  <div class="col-xl-12">
-                    <div class="form-check mt-2">
-                      <input class="form-check-input" type="checkbox" name="is-key[]" value="1">
-                      <label class="form-check-label">Mark this day as a key attraction</label>
-                    </div>
-                  </div>
-                </div>
+            <h5 class="fw-bold">Departure Batches</h5>
+
+            <div class="row gy-3">
+              <div class="col-xl-6">
+                <label class="form-label">Select Package</label>
+                <select class="form-control">
+                  <option value="">-- Select Package --</option>
+                  <option value="1">Manali Getaway</option>
+                  <option value="2">Leh Ladakh Adventure</option>
+                  <!-- You can loop through packages dynamically in Django -->
+                </select>
+              </div>
+              <div class="col-xl-6">
+                <label class="form-label">Month</label>
+                <select class="form-control">
+                  <option value="">-- Select Month --</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                </select>
               </div>
             </div>
 
-            <button type="button" class="btn btn-outline-primary btn-sm mt-2" onclick="addItineraryDay()">Add Another Day +</button>
+            <div class="mt-4">
+              <label class="form-label">Departure Dates</label>
+              <div id="departure-dates-container">
+                <div class="input-group mb-2">
+                  <input type="date" class="form-control" name="departure-dates[]">
+                  <button class="btn btn-outline-danger" onclick="this.parentElement.remove()">Remove</button>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary btn-sm mt-2" type="button" onclick="addDepartureDate()">Add Date +</button>
+            </div>
           </div>
 
-          <!-- Attractions Section -->
+          <!-- Pickup Locations Section -->
           <div class="card-body border-top mt-4 pt-4">
-            <h5 class="fw-bold">Attractions</h5>
-            <div id="attraction-container">
-              <div class="border p-3 mb-3 rounded attraction-item">
+            <h5 class="fw-bold">Pickup Locations</h5>
+
+            <div id="pickup-container">
+              <div class="border p-3 mb-3 rounded pickup-item">
                 <div class="row gy-2">
-                  <div class="col-md-6">
-                    <label>Attraction Name</label>
-                    <input type="text" class="form-control" name="attraction-name[]">
+                  <div class="col-md-4">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" name="pickup-city[]" placeholder="Enter City">
                   </div>
-                  <div class="col-md-6">
-                    <label>Time Spent (hours)</label>
-                    <input type="number" class="form-control" name="time-spent[]">
+                  <div class="col-md-8">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" name="pickup-address[]" placeholder="Enter Address">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Day of Tour</label>
+                    <input type="text" class="form-control" name="pickup-day[]" placeholder="e.g. Day 1">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Pickup Time</label>
+                    <input type="time" class="form-control" name="pickup-time[]">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Package Price</label>
+                    <input type="number" class="form-control" name="pickup-price[]" placeholder="₹">
                   </div>
                   <div class="col-md-12">
-                    <label>Description</label>
-                    <textarea class="form-control" name="attraction-description[]" rows="2"></textarea>
-                  </div>
-                  <div class="col-md-6">
-                    <label>How to Reach</label>
-                    <input type="text" class="form-control" name="how-to-reach[]">
-                  </div>
-                  <div class="col-md-6">
-                    <label>Trek Information</label>
-                    <select class="form-control" name="trek-info[]">
-                      <option value="">Select</option>
-                      <option value="Easy">Easy</option>
-                      <option value="Moderate">Moderate</option>
-                      <option value="Difficult">Difficult</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
-                    <label>Trek Distance (km)</label>
-                    <input type="number" class="form-control" name="trek-distance[]">
-                  </div>
-                  <div class="col-md-4">
-                    <label>Opening Hours</label>
-                    <input type="text" class="form-control" name="opening-hours[]">
-                  </div>
-                  <div class="col-md-4">
-                    <label>Entry Fee</label>
-                    <input type="text" class="form-control" name="entry-fee[]">
-                  </div>
-                  <div class="col-md-6">
-                    <label>Best Time to Visit</label>
-                    <input type="text" class="form-control" name="best-time[]">
-                  </div>
-                  <div class="col-md-12">
-                    <label>Upload Pictures</label>
-                    <input type="file" class="form-control attraction-image-input" multiple accept="image/*">
-                    <div class="image-preview mt-2 d-flex flex-wrap gap-2"></div>
+                    <button class="btn btn-outline-danger btn-sm mt-2" onclick="this.closest('.pickup-item').remove()">Remove Pickup Location</button>
                   </div>
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn-outline-secondary btn-sm mt-2" onclick="addAttraction()">Add Another Attraction +</button>
+
+            <button class="btn btn-outline-secondary btn-sm mt-3" type="button" onclick="addPickupLocation()">Add Pickup Location +</button>
           </div>
 
-          <div class="card-footer d-flex justify-content-between">
-            <a href="#" class="btn btn-light">⬅ Back</a>
-            <button class="btn btn-primary">Save Itinerary</button>
+          <!-- Footer Buttons -->
+          <div class="card-footer border-top mt-4 pt-3 d-flex justify-content-between">
+            <a href="/add-package" class="btn btn-light">⬅ Back</a>
+            <a href="/add-itinerary" class="btn btn-primary">Save and Continue ⮕</a>
           </div>
         </div>
       </div>
@@ -2180,88 +2160,26 @@
 
 <!-- ✅ JavaScript -->
 <script>
-function previewImages(input, previewContainer) {
-  const files = Array.from(input.files || []);
-  input._selectedImages = input._selectedImages || [];
-
-  input._selectedImages = [...input._selectedImages, ...files].filter((file, idx, arr) => {
-    return arr.findIndex(f => f.name === file.name && f.size === file.size) === idx;
-  });
-
-  previewContainer.innerHTML = '';
-  input._selectedImages.forEach((file, index) => {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'position-relative';
-      wrapper.style.width = '80px';
-      wrapper.style.height = '80px';
-
-      const img = document.createElement('img');
-      img.src = e.target.result;
-      img.className = 'rounded';
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'cover';
-
-      const btn = document.createElement('button');
-      btn.innerHTML = '&times;';
-      btn.className = 'btn btn-sm btn-danger position-absolute top-0 end-0 p-0 px-1';
-      btn.style.fontSize = '16px';
-      btn.onclick = () => {
-        input._selectedImages.splice(index, 1);
-        previewImages(input, previewContainer);
-      };
-
-      wrapper.appendChild(img);
-      wrapper.appendChild(btn);
-      previewContainer.appendChild(wrapper);
-    };
-    reader.readAsDataURL(file);
-  });
-
-  input.value = '';
+function addDepartureDate() {
+  const container = document.getElementById('departure-dates-container');
+  const inputGroup = document.createElement('div');
+  inputGroup.className = 'input-group mb-2';
+  inputGroup.innerHTML = `
+    <input type="date" class="form-control" name="departure-dates[]">
+    <button class="btn btn-outline-danger" onclick="this.parentElement.remove()">Remove</button>
+  `;
+  container.appendChild(inputGroup);
 }
 
-// Day-wise Itinerary Addition
-function addItineraryDay() {
-  const container = document.getElementById('itinerary-container');
-  const block = document.createElement('div');
-  block.className = 'border p-3 mb-3 rounded itinerary-day';
-  block.innerHTML = `
-    <div class="row gy-2">
-      <div class="col-xl-2"><label>Day</label><input type="number" class="form-control" name="day-number[]"></div>
-      <div class="col-xl-10"><label>Title</label><input type="text" class="form-control" name="day-title[]"></div>
-      <div class="col-xl-12"><label>Description</label><textarea class="form-control" name="day-description[]" rows="2"></textarea></div>
-      <div class="col-xl-12"><label>Images</label><input type="file" class="form-control day-image-input" multiple accept="image/*"><div class="image-preview mt-2 d-flex flex-wrap gap-2"></div></div>
-      <div class="col-xl-12"><div class="form-check mt-2"><input class="form-check-input" type="checkbox" name="is-key[]" value="1"><label class="form-check-label">Key Attraction</label></div></div>
-    </div>`;
-  container.appendChild(block);
-
-  const input = block.querySelector('.day-image-input');
-  const preview = block.querySelector('.image-preview');
-  input.addEventListener('change', () => previewImages(input, preview));
+function addPickupLocation() {
+  const container = document.getElementById('pickup-container');
+  const template = container.querySelector('.pickup-item');
+  const clone = template.cloneNode(true);
+  clone.querySelectorAll('input').forEach(input => input.value = '');
+  container.appendChild(clone);
 }
-
-// Attraction Addition
-function addAttraction() {
-  const container = document.getElementById('attraction-container');
-  const block = container.querySelector('.attraction-item').cloneNode(true);
-  block.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-  const input = block.querySelector('.attraction-image-input');
-  const preview = block.querySelector('.image-preview');
-  input._selectedImages = [];
-  preview.innerHTML = '';
-  input.addEventListener('change', () => previewImages(input, preview));
-  container.appendChild(block);
-}
-
-// Init image previews on page load
-document.querySelectorAll('.day-image-input, .attraction-image-input').forEach(input => {
-  const preview = input.nextElementSibling;
-  input.addEventListener('change', () => previewImages(input, preview));
-});
 </script>
+
 
         <!-- End::app-content -->
 
