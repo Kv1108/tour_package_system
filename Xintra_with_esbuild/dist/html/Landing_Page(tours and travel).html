@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="horizontal" data-nav-style="menu-click" data-menu-position="fixed"
+    data-theme-mode="light">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Xintra - Bootstrap 5 Premium Admin & Dashboard Template </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Css -->
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Style Css -->
+    <link href="../assets/css/styles.css" rel="stylesheet">
+
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.css" rel="stylesheet">
+
+    <!-- Node Waves Css -->
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+
+    <!-- SwiperJS Css -->
+    <link rel="stylesheet" href="../assets/libs/swiper/swiper-bundle.min.css">
+
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+    <script>
+        if (localStorage.xintradarktheme) {
+            document.querySelector("html").setAttribute("data-theme-mode", "dark")
+        }
+        if (localStorage.xintrartl) {
+            document.querySelector("html").setAttribute("dir", "rtl")
+            document.querySelector("#style")?.setAttribute("href", "../assets/libs/bootstrap/css/bootstrap.rtl.min.css");
+        }
+    </script>
+
+    <style>
+        /* Consistent card image aspect ratio */
+        .card-img-top {
+            width: 100%;
+            height: 200px; /* Fixed height for consistent aspect ratio */
+            object-fit: cover; /* Maintains aspect ratio while covering the container */
+            object-position: center; /* Centers the image */
+        }
+        
+        /* Ensure all cards have consistent height */
+        .custom-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .custom-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .custom-card .btn {
+            margin-top: auto;
+        }
+    </style>
+
+</head>
+
+<body class="landing-body">
+
+    <!-- Start Switcher -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="switcher-canvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Switcher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="">
+                <p class="switcher-style-head">Theme Color Mode:</p>
+                <div class="row switcher-style gx-0">
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-light-theme">
+                                Light
+                            </label>
+                            <input class="form-check-input" type="radio" name="theme-style" id="switcher-light-theme"
+                                checked>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-dark-theme">
+                                Dark
+                            </label>
+                            <input class="form-check-input" type="radio" name="theme-style" id="switcher-dark-theme">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <p class="switcher-style-head">Directions:</p>
+                <div class="row switcher-style gx-0">
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-ltr">
+                                LTR
+                            </label>
+                            <input class="form-check-input" type="radio" name="direction" id="switcher-ltr" checked>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-rtl">
+                                RTL
+                            </label>
+                            <input class="form-check-input" type="radio" name="direction" id="switcher-rtl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-colors">
+                <p class="switcher-style-head">Theme Primary:</p>
+                <div class="d-flex align-items-center switcher-style">
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-1" type="radio" name="theme-primary"
+                            id="switcher-primary">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-2" type="radio" name="theme-primary"
+                            id="switcher-primary1">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-3" type="radio" name="theme-primary"
+                            id="switcher-primary2">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-4" type="radio" name="theme-primary"
+                            id="switcher-primary3">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-5" type="radio" name="theme-primary"
+                            id="switcher-primary4">
+                    </div>
+                    <div class="form-check switch-select me-3 ps-0 mt-1 color-primary-light">
+                        <div class="theme-container-primary"></div>
+                        <div class="pickr-container-primary"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="switcher-style-head">reset:</p>
+                <div class="text-center">
+                    <button id="reset-all" class="btn btn-danger mt-3">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Switcher -->
+
+    <div class="landing-page-wrapper">
+
+        <!-- app-header -->
+        <header class="app-header">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="#home" class="header-logo">
+                                <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="toggle-logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-content-right d-flex align-items-center justify-content-end">
+                    <nav class="d-flex align-items-center gap-3">
+                        <a href="#home" class="nav-link fw-semibold">Home</a>
+                        <a href="#packages" class="nav-link fw-semibold">Packages</a>
+                        <a href="#features" class="nav-link fw-semibold">Features</a>
+                        <a href="#latest-stories" class="nav-link fw-semibold">Travel Blogs</a>
+                        <a href="#testimonials" class="nav-link fw-semibold">Testimonials</a>
+                        <a href="#join-us" class="btn btn-primary1-light ms-2">Join Us</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- /app-header -->
+
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <div class="container-xl">
+                <!-- Start::main-sidebar -->
+                <div class="main-sidebar shadow-none">
+
+                    <!-- Start::nav -->
+                    <nav class="main-menu-container nav nav-pills sub-open">
+                        <div class="landing-logo-container">
+                            <div class="horizontal-logo">
+                                <a href="index.html" class="header-logo">
+                                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo"
+                                        class="desktop-logo">
+                                    <img src="../assets/images/brand-logos/desktop-white.png" alt="logo"
+                                        class="desktop-white">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slide-left" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                            </svg></div>
+                        <ul class="main-menu">
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a class="side-menu__item" href="#home">
+                                    <span class="side-menu__label">Home</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#packages" class="side-menu__item">
+                                    <span class="side-menu__label">Packages</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#features" class="side-menu__item">
+                                    <span class="side-menu__label">Features</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#latest-stories" class="side-menu__item">
+                                    <span class="side-menu__label">Travel Blogs</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#testimonials" class="side-menu__item">
+                                    <span class="side-menu__label">Testimonials</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#join-us" class="side-menu__item">
+                                    <span class="side-menu__label">Join Us</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                        </ul>
+                        <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z">
+                                </path>
+                            </svg></div>
+                        <div class="d-lg-flex d-none">
+                            <div class="btn-list d-lg-flex d-none mt-lg-2 mt-xl-0 mt-0">
+                                <a href="sign-up-basic.html" class="btn btn-wave btn-primary1">
+                                    Sign Up
+                                </a>
+                                <button class="btn btn-wave btn-icon btn-primary switcher-icon d-flex align-items-center justify-content-center" data-bs-toggle="offcanvas"
+                                    data-bs-target="#switcher-canvas">
+                                    <i class="ri-settings-3-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- End::nav -->
+
+                </div>
+                <!-- End::main-sidebar -->
+            </div>
+
+        </aside>
+        <!-- End::app-sidebar -->
+
+        <!-- Start::app-content -->
+        <div class="main-content landing-main px-0">
+
+            <!-- Start:: Section-1 -->
+            <div class="landing-banner" id="home">
+                <section class="section">
+                    <div class="container main-banner-container pb-lg-0">
+                        <div class="row pt-3 align-items-center">
+                            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-8">
+                                <div class="pt-lg-5 pb-4">
+                                    <div class="mb-3">
+                                        <h6 class="fw-medium text-fixed-white op-9">Explore India with Us</h6>
+                                    </div>
+                                    <p class="landing-banner-heading mb-3 text-fixed-white">What Is Your Destination?</p>
+                                    <div class="fs-16 mb-5 text-fixed-white op-7">Discover the best Indian travel experiences: beaches, mountains, temples, and more. Find your perfect getaway!</div>
+                                    <form class="bg-white p-3 rounded shadow mb-4 d-flex flex-wrap gap-2 align-items-end" style="max-width: 600px;">
+                                        <div class="me-2 flex-fill">
+                                            <label class="form-label mb-1">Location</label>
+                                            <select class="form-select">
+                                                <option selected disabled>Choose destination</option>
+                                                <option>Goa Beach</option>
+                                                <option>Manali Hills</option>
+                                                <option>Kerala Backwaters</option>
+                                                <option>Jaipur Temples</option>
+                                                <option>Varanasi Ghats</option>
+                                                <option>Rishikesh Adventure</option>
+                                                <option>Leh-Ladakh</option>
+                                                <option>Andaman Islands</option>
+                                            </select>
+                                        </div>
+                                        <div class="me-2">
+                                            <label class="form-label mb-1">From</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                        <div class="me-2">
+                                            <label class="form-label mb-1">To</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                        <div class="me-2">
+                                            <label class="form-label mb-1">Guests</label>
+                                            <input type="number" class="form-control" min="1" value="2">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary1">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-4 my-auto">
+                                <div class="text-end landing-main-image landing-heading-img">
+                                    <img src="../assets/images/travels/nils-nedel-ONpGBpns3cs-unsplash.jpg" alt="Travel India" class="img-fluid rounded-3 shadow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- End:: Section-1 -->
+
+            <!-- Start:: Packages Section -->
+            <section class="section" id="packages">
+                <div class="container">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold mb-2">Best Holiday Packages</h2>
+                        <p class="text-muted">Explore top Indian destinations and experiences</p>
+                    </div>
+                    <!-- Filter/Tags and Search Bar -->
+                    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-sm btn-primary1">All</button>
+                            <button class="btn btn-sm btn-outline-primary1">Goa</button>
+                            <button class="btn btn-sm btn-outline-primary1">Manali</button>
+                            <button class="btn btn-sm btn-outline-primary1">Kerala</button>
+                            <button class="btn btn-sm btn-outline-primary1">Jaipur</button>
+                            <button class="btn btn-sm btn-outline-primary1">Varanasi</button>
+                            <button class="btn btn-sm btn-outline-primary1">Rishikesh</button>
+                            <button class="btn btn-sm btn-outline-primary1">Leh-Ladakh</button>
+                            <button class="btn btn-sm btn-outline-primary1">Andaman</button>
+                        </div>
+                        <form class="d-flex" style="max-width: 300px;">
+                            <input type="text" class="form-control form-control-sm me-2" placeholder="Search destination...">
+                            <button class="btn btn-primary1 btn-sm" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="row g-4 align-items-stretch">
+                        <!-- Goa Beach -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Goa/nagarjuna-reddy-faFlARh2q3I-unsplash.jpg" class="card-img-top" alt="Goa Beach">
+                                <div class="card-body">
+                                    <h5 class="card-title">Goa Beach Escape</h5>
+                                    <p class="card-text">Enjoy the sun, sand, and vibrant nightlife of Goa.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.7 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(1,234 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹12,999</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Manali Hiking -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Manali/aditya-chache-4OuUNgTGynk-unsplash.jpg" class="card-img-top" alt="Manali Hiking">
+                                <div class="card-body">
+                                    <h5 class="card-title">Manali Hiking Adventure</h5>
+                                    <p class="card-text">Trek the Himalayas and enjoy breathtaking views in Manali.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.8 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(980 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹15,499</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kerala Backwaters -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/kerela/aby-zachariah-72xYZN1GdCY-unsplash.jpg" class="card-img-top" alt="Kerala Backwaters">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kerala Backwaters</h5>
+                                    <p class="card-text">Relax on a houseboat and explore the lush backwaters of Kerala.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.9 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(1,120 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹18,299</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Jaipur Temples -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/jaipur/kirti-kalla-y5TwD3jsQIc-unsplash.jpg" class="card-img-top" alt="Jaipur Temples">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jaipur Temples & Palaces</h5>
+                                    <p class="card-text">Discover the royal heritage and beautiful temples of Jaipur.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.6 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(860 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹10,499</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Varanasi Spiritual Tour -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Varanshi/matteo-giovanardi-4WQ-qQPVpWE-unsplash.jpg" class="card-img-top" alt="Varanasi Spiritual Tour">
+                                <div class="card-body">
+                                    <h5 class="card-title">Varanasi Spiritual Tour</h5>
+                                    <p class="card-text">Experience the spiritual aura and ghats of Varanasi.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.8 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(1,050 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹13,299</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rishikesh Adventure -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/rishikesh/atarin-michaeli-XLSOA3yD7N0-unsplash.jpg" class="card-img-top" alt="Rishikesh Adventure">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rishikesh Adventure</h5>
+                                    <p class="card-text">Go river rafting and find peace in the yoga capital of India.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.7 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(900 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹11,799</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Leh-Ladakh -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Leh/joshi-milestoner-PUBD94j-NKs-unsplash.jpg" class="card-img-top" alt="Leh-Ladakh">
+                                <div class="card-body">
+                                    <h5 class="card-title">Leh-Ladakh Expedition</h5>
+                                    <p class="card-text">Ride through the mountains and explore the beauty of Ladakh.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.9 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(1,300 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹22,499</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Andaman Islands -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/island/cris-tagupa-lT7zmkth3o8-unsplash.jpg" class="card-img-top" alt="Andaman Islands">
+                                <div class="card-body">
+                                    <h5 class="card-title">Andaman Islands Retreat</h5>
+                                    <p class="card-text">Crystal clear waters, white sand beaches, and tropical paradise.</p>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-success me-2">4.8 <i class="ri-star-fill"></i></span>
+                                        <span class="text-muted">(1,150 reviews)</span>
+                                    </div>
+                                    <div class="fw-bold fs-5 mb-2">₹19,999</div>
+                                    <a href="#" class="btn btn-primary1 w-100">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Packages Section -->
+
+            <!-- Start:: Offer Banner Section -->
+            <section class="section py-0" id="offer-banner">
+                <div class="container my-4">
+                    <div class="card custom-card bg-primary1 text-fixed-white border-0 overflow-hidden position-relative">
+                        <div class="row align-items-center">
+                            <div class="col-md-8 p-4">
+                                <h3 class="fw-bold mb-2">Grab 30% Off on Your First Booking!</h3>
+                                <p class="mb-3">Book your dream holiday package now and enjoy exclusive discounts on top Indian destinations. Limited time offer!</p>
+                                <a href="#packages" class="btn btn-lg btn-white text-primary1 fw-semibold">Book Now</a>
+                            </div>
+                            <div class="col-md-4 d-none d-md-block text-end pe-0">
+                                <img src="../assets/images/travels/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg" alt="Offer" class="img-fluid rounded-end-3" style="max-height: 180px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Offer Banner Section -->
+
+            <!-- Start:: Popular Indian Cities Section -->
+            <section class="section" id="popular-cities">
+                <div class="container">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold mb-2">Popular Indian Cities</h2>
+                        <p class="text-muted">Discover the most loved destinations in India</p>
+                    </div>
+                    <div class="row g-4 justify-content-center align-items-stretch">
+                        <!-- Goa -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Goa/vivek-tbXOeh_n9jA-unsplash.jpg" class="card-img-top" alt="Goa">
+                                <div class="card-body">
+                                    <h5 class="card-title">Goa</h5>
+                                    <p class="card-text">Famous for its beaches, nightlife, and vibrant culture.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Manali -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Manali/abhishek-donda-7h7NCXp9eZ0-unsplash.jpg" class="card-img-top" alt="Manali">
+                                <div class="card-body">
+                                    <h5 class="card-title">Manali</h5>
+                                    <p class="card-text">A paradise for adventure lovers and nature enthusiasts.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Leh -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Leh/nikhil-Httml-Ds8gQ-unsplash.jpg" class="card-img-top" alt="Leh">
+                                <div class="card-body">
+                                    <h5 class="card-title">Leh</h5>
+                                    <p class="card-text">Known for its stunning landscapes and Buddhist monasteries.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rishikesh -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/rishikesh/narinder-pal-Vv0oZQ_v48Y-unsplash.jpg" class="card-img-top" alt="Rishikesh">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rishikesh</h5>
+                                    <p class="card-text">The yoga capital of the world and a hub for river rafting.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Jaipur -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/jaipur/nina-luong-IOwItPmnkyU-unsplash.jpg" class="card-img-top" alt="Jaipur">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jaipur</h5>
+                                    <p class="card-text">The Pink City, known for its palaces and vibrant bazaars.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Varanasi -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Varanshi/srivatsan-balaji-dz42hvd61BE-unsplash.jpg" class="card-img-top" alt="Varanasi">
+                                <div class="card-body">
+                                    <h5 class="card-title">Varanasi</h5>
+                                    <p class="card-text">The spiritual heart of India, famous for its ghats and temples.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kerala -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/kerela/swastik-arora-h-PHS1XHC0I-unsplash.jpg" class="card-img-top" alt="Kerala">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kerala</h5>
+                                    <p class="card-text">God's Own Country, known for its backwaters and greenery.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Island (Andaman) -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/island/cris-tagupa-lT7zmkth3o8-unsplash.jpg" class="card-img-top" alt="Andaman Islands">
+                                <div class="card-body">
+                                    <h5 class="card-title">Andaman Islands</h5>
+                                    <p class="card-text">Tropical paradise with crystal clear waters and white sand beaches.</p>
+                                    <a href="#packages" class="btn btn-primary1 w-100">Explore Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Popular Indian Cities Section -->
+
+            <!-- Start:: Book with Confidence Section -->
+            <section class="section section-bg py-4" id="book-confidence">
+                <div class="container">
+                    <div class="row text-center justify-content-center g-4">
+                        <div class="col-md-3 col-6">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <div class="mb-3"><i class="ri-shield-check-line fs-2 text-primary1"></i></div>
+                                <h6 class="fw-semibold mb-1">Verified Packages</h6>
+                                <p class="mb-0 text-muted">All packages are handpicked and verified for quality.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <div class="mb-3"><i class="ri-customer-service-2-line fs-2 text-primary1"></i></div>
+                                <h6 class="fw-semibold mb-1">24/7 Support</h6>
+                                <p class="mb-0 text-muted">Our team is available round the clock for your assistance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <div class="mb-3"><i class="ri-money-rupee-circle-line fs-2 text-primary1"></i></div>
+                                <h6 class="fw-semibold mb-1">Best Price Guarantee</h6>
+                                <p class="mb-0 text-muted">Get the best deals and offers on all bookings.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <div class="mb-3"><i class="ri-star-smile-line fs-2 text-primary1"></i></div>
+                                <h6 class="fw-semibold mb-1">Happy Customers</h6>
+                                <p class="mb-0 text-muted">Thousands of travelers trust us for their holidays.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Book with Confidence Section -->
+
+            <!-- Start:: Latest Travel Stories Section -->
+            <section class="section" id="latest-stories">
+                <div class="container">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold mb-2">Latest Travel Stories</h2>
+                        <p class="text-muted">Get inspired by our latest travel blogs and stories</p>
+                    </div>
+                    <div class="row g-4 justify-content-center align-items-stretch">
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Goa/sarang-pande-IijeyJbmrec-unsplash.jpg" class="card-img-top" alt="Goa Blog">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">A Perfect Beach Day in Goa</h6>
+                                    <p class="text-muted">Experience the best beaches, food, and nightlife in Goa with our travel guide.</p>
+                                    <a href="#" class="btn btn-primary1 btn-sm">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Manali/vishal-bhutani-NeNY0E8LJ8Q-unsplash.jpg" class="card-img-top" alt="Manali Blog">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">Hiking Trails of Manali</h6>
+                                    <p class="text-muted">Discover the most scenic hiking routes and adventure activities in Manali.</p>
+                                    <a href="#" class="btn btn-primary1 btn-sm">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100">
+                                <img src="../assets/images/travels/Leh/vivek-gsDF2ESMxUg-unsplash.jpg" class="card-img-top" alt="Leh Blog">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">Leh: Land of High Passes</h6>
+                                    <p class="text-muted">Explore the breathtaking beauty and culture of Leh-Ladakh in our latest story.</p>
+                                    <a href="#" class="btn btn-primary1 btn-sm">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Latest Travel Stories Section -->
+
+            <!-- Start:: Testimonials Section -->
+            <section class="section section-bg" id="testimonials">
+                <div class="container">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold mb-2">What Our Customers Say</h2>
+                        <p class="text-muted">Real experiences from real travelers</p>
+                    </div>
+                    <div class="row g-4 justify-content-center align-items-stretch">
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100 p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="../assets/images/faces/8.jpg" class="rounded-circle me-3" width="48" height="48" alt="">
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Elsa Teresa</h6>
+                                        <span class="text-muted fs-12">Goa Tour</span>
+                                    </div>
+                                </div>
+                                <p class="mb-2">"The best travel experience ever! Everything was perfectly organized and the support team was amazing."</p>
+                                <div class="text-warning">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100 p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="../assets/images/faces/9.jpg" class="rounded-circle me-3" width="48" height="48" alt="">
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Henry Milo</h6>
+                                        <span class="text-muted fs-12">Manali Adventure</span>
+                                    </div>
+                                </div>
+                                <p class="mb-2">"Loved the Manali hiking package! The guides were professional and the views were breathtaking."</p>
+                                <div class="text-warning">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card custom-card h-100 p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="../assets/images/faces/11.jpg" class="rounded-circle me-3" width="48" height="48" alt="">
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Katherin Oslo</h6>
+                                        <span class="text-muted fs-12">Leh-Ladakh Expedition</span>
+                                    </div>
+                                </div>
+                                <p class="mb-2">"A dream come true! The Leh-Ladakh trip was well planned and the scenery was out of this world."</p>
+                                <div class="text-warning">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Testimonials Section -->
+
+            <!-- Start:: Newsletter Signup Section -->
+            <section class="section section-bg py-5" id="join-us">
+                <div class="container">
+                    <div class="card custom-card border-0 shadow-lg overflow-hidden">
+                        <div class="row align-items-center g-0">
+                            <div class="col-md-6 p-4">
+                                <h3 class="fw-bold mb-2">Join Our Travel Community & Get 30% Off Your Next Booking</h3>
+                                <p class="mb-3">Sign up for exclusive offers, travel tips, and the latest packages straight to your inbox.</p>
+                                <form class="d-flex flex-wrap gap-2">
+                                    <input type="email" class="form-control flex-grow-1" placeholder="Enter your email address" required>
+                                    <button class="btn btn-primary1" type="submit">Join Us</button>
+                                </form>
+                                <small class="text-muted d-block mt-2">By joining, you agree to our Privacy Policy and Terms.</small>
+                            </div>
+                            <div class="col-md-6 d-none d-md-block">
+                                <img src="../assets/images/travels/island/cris-tagupa-lT7zmkth3o8-unsplash.jpg" alt="Join Us Travel" class="img-fluid w-100" style="object-fit:cover; min-height:260px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Newsletter Signup Section -->
+
+            <!-- Start:: Modern Footer -->
+            <footer class="section bg-white border-top mt-5">
+                <div class="container py-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                            <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" height="32" class="me-2">
+                            <span class="text-muted">&copy; <span id="year"></span> TourMate. All rights reserved.</span>
+                        </div>
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <a href="#about-us" class="text-primary1 me-3">About Us</a>
+                            <a href="#contact-us" class="text-primary1">Contact Us</a>
+                        </div>
+                        <div class="col-md-4 text-center text-md-end">
+                            <a href="#" class="text-primary1 me-2"><i class="ri-facebook-fill fs-5"></i></a>
+                            <a href="#" class="text-primary1 me-2"><i class="ri-instagram-line fs-5"></i></a>
+                            <a href="#" class="text-primary1 me-2"><i class="ri-twitter-x-line fs-5"></i></a>
+                            <a href="#" class="text-primary1"><i class="ri-linkedin-fill fs-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End:: Modern Footer -->
+
+        </div>
+        <!-- End::app-content -->
+
+    </div>
+
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../assets/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+    <!-- Choices JS -->
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../assets/js/defaultmenu.min.js"></script>
+
+    <!-- Internal Landing JS -->
+    <script src="../assets/js/landing.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- Landing Sticky JS -->
+    <script src="../assets/js/landing-sticky.js"></script>
+
+</body>
+
+</html>
