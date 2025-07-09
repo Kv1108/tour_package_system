@@ -303,35 +303,59 @@
                                     </div>
                                     <p class="landing-banner-heading mb-3 text-fixed-white">What Is Your Destination?</p>
                                     <div class="fs-16 mb-5 text-fixed-white op-7">Discover the best Indian travel experiences: beaches, mountains, temples, and more. Find your perfect getaway!</div>
-                                    <form class="bg-white p-3 rounded shadow mb-4 d-flex flex-wrap gap-2 align-items-end" style="max-width: 600px;">
-                                        <div class="me-2 flex-fill">
-                                            <label class="form-label mb-1">Location</label>
-                                            <select class="form-select">
-                                                <option selected disabled>Choose destination</option>
-                                                <option>Goa Beach</option>
-                                                <option>Manali Hills</option>
-                                                <option>Kerala Backwaters</option>
-                                                <option>Jaipur Temples</option>
-                                                <option>Varanasi Ghats</option>
-                                                <option>Rishikesh Adventure</option>
-                                                <option>Leh-Ladakh</option>
-                                                <option>Andaman Islands</option>
-                                            </select>
-                                        </div>
-                                        <div class="me-2">
-                                            <label class="form-label mb-1">From</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                        <div class="me-2">
-                                            <label class="form-label mb-1">To</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                        <div class="me-2">
-                                            <label class="form-label mb-1">Guests</label>
-                                            <input type="number" class="form-control" min="1" value="2">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary1">Search</button>
-                                    </form>
+                                    <form class="bg-white p-3 rounded shadow mb-4 d-flex flex-wrap gap-2 align-items-end" style="max-width: 800px;">
+    <div class="me-2 flex-fill">
+        <label class="form-label mb-1">From City</label>
+        <select class="form-select" required>
+            <option selected disabled>Choose city</option>
+            <option>New Delhi</option>
+            <option>Mumbai</option>
+            <option>Bangalore</option>
+            <option>Kolkata</option>
+            <option>Chennai</option>
+            <option>Hyderabad</option>
+        </select>
+    </div>
+    <div class="me-2 flex-fill">
+        <label class="form-label mb-1">To City</label>
+        <select class="form-select" required>
+            <option selected disabled>Choose destination</option>
+            <option>Goa</option>
+            <option>Manali</option>
+            <option>Kerala</option>
+            <option>Jaipur</option>
+            <option>Varanasi</option>
+            <option>Rishikesh</option>
+            <option>Leh-Ladakh</option>
+            <option>Andaman Islands</option>
+        </select>
+    </div>
+    <div class="me-2">
+        <label class="form-label mb-1">Departure Date</label>
+        <input type="date" class="form-control" required>
+    </div>
+    <div class="me-2">
+        <label class="form-label mb-1">Guests</label>
+        <div class="input-group">
+            <input type="number" class="form-control" min="1" value="2" style="max-width: 60px;" required>
+            <span class="input-group-text">Adults</span>
+            <input type="number" class="form-control" min="0" value="0" style="max-width: 60px;">
+            <span class="input-group-text">Children</span>
+        </div>
+    </div>
+    <div class="me-2">
+        <label class="form-label mb-1">Transport</label>
+        <div class="btn-group" role="group" aria-label="Transport Type">
+            <input type="radio" class="btn-check" name="transport" id="flight" autocomplete="off" checked>
+            <label class="btn btn-outline-primary1" for="flight"><i class="ri-flight-takeoff-line"></i> Flight</label>
+            <input type="radio" class="btn-check" name="transport" id="bus" autocomplete="off">
+            <label class="btn btn-outline-primary1" for="bus"><i class="ri-bus-line"></i> Bus</label>
+            <input type="radio" class="btn-check" name="transport" id="train" autocomplete="off">
+            <label class="btn btn-outline-primary1" for="train"><i class="ri-train-line"></i> Train</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary1 px-4">Search</button>
+</form>
                                 </div>
                             </div>
                             <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-4 my-auto">
